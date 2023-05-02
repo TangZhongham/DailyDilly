@@ -18,6 +18,8 @@ An async personal newshub
 
 网页host功能
 
+支持 Notion API
+
 ### 网站汇总
 
 金融知识获取：哪些比较好的网站？
