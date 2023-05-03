@@ -1,7 +1,9 @@
 import mechanicalsoup
+import re
 
 url = "https://news.ycombinator.com/"
 
+today_yc = {}
 
 def get_yc(yc):
     browser = mechanicalsoup.StatefulBrowser()
@@ -9,10 +11,27 @@ def get_yc(yc):
     p = browser.page
     # url
     for i in p.find_all("span", "titleline"):
-        print(i)
+        # print(i)
+        today_yc["title"] = i.get_text()
+        today_yc["url"] = i.find("a").get("href")
+
     # 作者，points 数，时间。（可以获得当天内的top10帖子
     for x in p.find_all("td", "subtext"):
-        print(x)
+        # print(x)
+        _score = x.find("span", "score").get_text()
+        score = re.findall("[0-9]+", _score)[0]
+        # '2023-05-03T10:32:10'
+        timestamp = x.find("span", "age").get("title")
+        # time from now
+        time = x.find("span", "age").get_text()
+        writer = x.find("a", "hnuser").get_text()
+        _comments = x.find_all("a")[-1].get_text()
+        if re.findall("[0-9]+", _comments):
+            comments = re.findall("[0-9]+", _comments)[0]
+            print(comments)
+
+
+
 
 
 if __name__ == '__main__':
