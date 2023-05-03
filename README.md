@@ -20,6 +20,12 @@ An async personal newshub
 
 支持 Notion API
 
+通过model做一个每日简报，比方说top10个网站的热文，用chatgpt之类的总结再输出。
+
+用sqlite数据库存储，了解该数据库原理
+
+前端看看有没有类似bootstrap 的框架
+
 ### 网站汇总
 
 金融知识获取：哪些比较好的网站？
@@ -43,6 +49,8 @@ swiftui 知识？twitter 爬虫？
 Kijiji 通用爬虫？
 
 存储方案？
+
+每日热帖：hackernews
 
 ## 项目架构
 
