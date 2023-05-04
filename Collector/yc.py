@@ -26,8 +26,10 @@ def get_yc(yc):
             print(score)
         # '2023-05-03T10:32:10'
         timestamp = x.find("span", "age").get("title")
+        today_yc["timestamp"] = timestamp
         # time from now
         time = x.find("span", "age").get_text()
+        today_yc["content"]["time"] = time
         writer = x.find("a", "hnuser").get_text()
         _comments = x.find_all("a")[-1].get_text()
         if re.findall("[0-9]+", _comments):
