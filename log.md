@@ -26,35 +26,35 @@
 
 ### 网站汇总
 
-金融知识获取：哪些比较好的网站？
+#### ❎ 金融知识获取：哪些比较好的网站？
 
-留学信息？
+#### ❎ 留学信息
 
-个人常逛的网页合并:
+#### 🏄 娱乐
 
-hupu，t66y，v2ex，pingcong，
+❎ hupu
+❎ t66y
+❎ v2ex
+❎ pingcong
+❎ 机核
+❎ chiphell
+🏄 吾爱破解
 
-AI 知识
+#### ❎ AI 知识
 
-吾爱破解
+#### 🏄 新闻
 
-chiphell
+🏄 yc hackernews
 
-每日随机文章（随想？）
+#### 每日随机文章（随想？）
 
-swiftui 知识？twitter 爬虫？
+❎ daily fiction: https://dailysciencefiction.com/
 
-Kijiji 通用爬虫？
+❎ 可以自己学习的英语单词也对接进来。（每日单词
 
-存储方案？
+#### swiftui 知识？twitter 爬虫？
 
-每日热帖：hackernews
-
-机核
-
-daily fiction: https://dailysciencefiction.com/
-
-可以自己学习的英语单词也对接进来。（每日单词
+#### Kijiji 通用爬虫？
 
 ## 项目架构
 
@@ -71,3 +71,7 @@ daily fiction: https://dailysciencefiction.com/
 ## 原理
 
 了解bs源码等项目源码
+
+## log
+
+0504 把基本 yc/pojie 写完了爬取的部分。打算选几个网站，然后把框架搭好。
