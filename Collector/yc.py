@@ -1,5 +1,10 @@
 import mechanicalsoup
 import re
+import csv
+
+# TODO:
+# 1. 入csv
+# 2. 权重计算（可交给fastapi做，这边只管入库，排序解耦
 
 url = "https://news.ycombinator.com/"
 
@@ -42,6 +47,22 @@ def get_yc(yc):
         b.append(score_dic)
 
 
+def sink_csv(result):
+    ## TODO 需要添加对比模块功能，目前只对比title即可
+    header = ["title", "score", "comments", "writer", "time", "timestamp", "url"]
+    with open('../storage/csv/yc.csv', 'a') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=header, delimiter='|')
+        # writer.writeheader()
+        writer.writerows(result)
+    print("更新完成")
+
+
+def calculate_quanzhong():
+    # 计算展示的权重
+    pass
+
+
+
 if __name__ == '__main__':
     get_yc(url)
     final = []
@@ -55,3 +76,4 @@ if __name__ == '__main__':
     print(b)
     print(len(b))
     print(final)
+    sink_csv(final)
