@@ -68,6 +68,10 @@
 
 可以用免费的chatgpt 集合做一个内容摘要功能：https://github.com/LiLittleCat/awesome-free-chatgpt
 
+前端：
+
+发现email 也有框架美化 https://get.foundation/emails/email-templates.html
+
 ## 原理
 
 了解bs源码等项目源码
