@@ -5,6 +5,7 @@ url = "https://news.ycombinator.com/"
 
 today_yc = {}
 
+
 def get_yc(yc):
     browser = mechanicalsoup.StatefulBrowser()
     bs = browser.open(yc)
@@ -19,7 +20,9 @@ def get_yc(yc):
     for x in p.find_all("td", "subtext"):
         # print(x)
         _score = x.find("span", "score").get_text()
-        score = re.findall("[0-9]+", _score)[0]
+        if re.findall("[0-9]+", _score):
+            score = re.findall("[0-9]+", _score)[0]
+            print(score)
         # '2023-05-03T10:32:10'
         timestamp = x.find("span", "age").get("title")
         # time from now
