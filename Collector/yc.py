@@ -19,6 +19,7 @@ def get_yc(yc):
     # 作者，points 数，时间。（可以获得当天内的top10帖子
     for x in p.find_all("td", "subtext"):
         # print(x)
+        # 存在没有score 的条目
         _score = x.find("span", "score").get_text()
         if re.findall("[0-9]+", _score):
             score = re.findall("[0-9]+", _score)[0]
@@ -32,9 +33,6 @@ def get_yc(yc):
         if re.findall("[0-9]+", _comments):
             comments = re.findall("[0-9]+", _comments)[0]
             print(comments)
-
-
-
 
 
 if __name__ == '__main__':
