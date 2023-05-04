@@ -1,4 +1,12 @@
 import csv
+import mechanicalsoup
+
+
+def get_page(url):
+    browser = mechanicalsoup.StatefulBrowser()
+    browser.open(url)
+    p = browser.page
+    return p
 
 
 def sink_csv(result, filename, header):

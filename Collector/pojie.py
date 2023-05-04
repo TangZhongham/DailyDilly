@@ -1,6 +1,10 @@
 import mechanicalsoup
 import re
-from Collector.collector import sink_csv
+from Collector.collector import *
+
+# TODO:
+# 1 比较规则入库
+# 2 weights
 
 url = "https://www.52pojie.cn/index.php"
 header = ["name", "type", "writer", "url", "timestamp"]
@@ -9,9 +13,7 @@ pojie = []
 
 
 def get_pojie(pojie):
-    browser = mechanicalsoup.StatefulBrowser()
-    browser.open(pojie)
-    p = browser.page
+    p = get_page(pojie)
     top = p.find("tr", "fl_row")
     top4 = top.find_all("div", "boxbg_7ree")
     if len(top4) == 5:
@@ -31,11 +33,13 @@ def get_info(threads):
         thread_url = thread.get("href")
         thread_tips = thread.get("tips")
         if thread_tips:
-            thread_writer = re.findall("作者：(.+?)<br>", thread_tips)
-            thread_timestamp = re.findall("时间：(.+?)<br>", thread_tips)
-            thread_type = re.findall("版块：(.+?)<br>", thread_tips)
+            thread_writer = re.findall("作者：(.+?)<br>", thread_tips)[0]
+            thread_timestamp = re.findall("时间：(.+?)<br>", thread_tips)[0]
+            thread_type = re.findall("版块：(.+?)<br>", thread_tips)[0]
             pojie.append({"name": thread_name, "type": thread_type, "writer": thread_writer,
-                          "url": thread_url, "timestamp": thread_timestamp})
+                          "url": "https://www.52pojie.cn/" + thread_url, "timestamp": thread_timestamp})
+            print({"name": thread_name, "type": thread_type, "writer": thread_writer,
+                          "url": "https://www.52pojie.cn/" + thread_url, "timestamp": thread_timestamp})
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 import mechanicalsoup
 import re
-from .collector import sink_csv
+from Collector.collector import *
 
 # TODO:
 # 1. 入csv
@@ -15,9 +15,7 @@ b = []
 
 
 def get_yc(yc):
-    browser = mechanicalsoup.StatefulBrowser()
-    bs = browser.open(yc)
-    p = browser.page
+    p = get_page(yc)
     # url
     for i in p.find_all("span", "titleline"):
         # print(i)
