@@ -20,7 +20,7 @@ def get_yc(yc):
     for x in p.find_all("td", "subtext"):
         # print(x)
         # 存在没有score 的条目
-        _score = x.find("span", "score").get_text()
+        _score = x.find("span", "score").get_text() if x.find("span", "score") else ""
         if re.findall("[0-9]+", _score):
             score = re.findall("[0-9]+", _score)[0]
             print(score)
@@ -29,8 +29,8 @@ def get_yc(yc):
         today_yc["timestamp"] = timestamp
         # time from now
         time = x.find("span", "age").get_text()
-        today_yc["content"]["time"] = time
-        writer = x.find("a", "hnuser").get_text()
+        today_yc["time"] = time
+        writer = x.find("a", "hnuser").get_text() if x.find("a", "hnuser") else ""
         _comments = x.find_all("a")[-1].get_text()
         if re.findall("[0-9]+", _comments):
             comments = re.findall("[0-9]+", _comments)[0]

@@ -52,11 +52,21 @@ Kijiji 通用爬虫？
 
 每日热帖：hackernews
 
+机核
+
+daily fiction: https://dailysciencefiction.com/
+
+可以自己学习的英语单词也对接进来。（每日单词
+
 ## 项目架构
 
 1. 爬虫存本地db
 
 2. web 服务读db，发邮件 or 页面刷新触发爬取
+
+先用csv存，然后后期开发db功能（爬取和读取分离）
+
+存notion？
 
 ## 原理
 
