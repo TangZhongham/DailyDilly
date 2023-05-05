@@ -20,6 +20,8 @@
 
 通过model做一个每日简报，比方说top10个网站的热文，用chatgpt之类的总结再输出。
 
+存储层支持csv/xml（rss）/sqlite
+
 用sqlite数据库存储，了解该数据库原理
 
 前端看看有没有类似bootstrap 的框架
