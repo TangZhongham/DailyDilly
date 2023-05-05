@@ -33,8 +33,8 @@
 #### 🏄 娱乐
 
 ❎ hupu
-❎ t66y
-❎ v2ex
+❎ t66y：https://rsshub.app/t66y/7    
+❎ v2ex：https://v2ex.com/index.xml
 ❎ pingcong
 ❎ 机核
 ❎ chiphell
@@ -45,6 +45,12 @@
 #### 🏄 新闻
 
 🏄 yc hackernews
+
+参考 https://github.com/echosoar/news 有很多新闻网站的api 可以直接爬取用 （搜github新闻聚合
+
+freebuf https://www.freebuf.com/feed
+
+simhash 算法去重
 
 #### 每日随机文章（随想？）
 
@@ -71,6 +77,22 @@
 前端：
 
 发现email 也有框架美化 https://get.foundation/emails/email-templates.html
+
+
+## 前端
+
+前端要求：
+
+- 手机电脑都能用
+- 最好有黑暗模式
+- 新闻聚合类
+
+前端选择：
+
+Bootstrap5
+
+Foundation：有 email 的template
+
 
 ## 原理
 
