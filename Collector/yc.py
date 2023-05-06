@@ -30,6 +30,9 @@ def get_yc(yc):
         if re.findall("[0-9]+", _score):
             score = re.findall("[0-9]+", _score)[0]
             score_dic["score"] = score
+        else:
+            # threads like hiring does not have a score
+            score_dic["score"] = 0
         # '2023-05-03T10:32:10'
         timestamp = x.find("span", "age").get("title")
         score_dic["timestamp"] = timestamp
@@ -42,12 +45,26 @@ def get_yc(yc):
         if re.findall("[0-9]+", _comments):
             comments = re.findall("[0-9]+", _comments)[0]
             score_dic["comments"] = comments
+        else:
+            score_dic["comments"] = 0
         b.append(score_dic)
 
 
-def calculate_weights():
-    # 计算展示的权重
+def is_new(threads):
+    # 确定是否已经爬取过
     pass
+
+
+def calculate_weights(threads):
+    # 计算展示的权重
+    # score 前五 + comments 前五
+    top5_score = get_topn(threads,"score", 5)
+    top5_comments = get_topn(threads,"comments", 5)
+    print("a")
+
+
+def get_topn(threads,section,number):
+    return sorted(threads, key=lambda one: int(one.__getitem__(section)), reverse=True)[:number]
 
 
 if __name__ == '__main__':
@@ -64,5 +81,7 @@ if __name__ == '__main__':
     print(b)
     print(len(b))
     print(final)
+    calculate_weights(final)
+
     yc_csv = '../storage/csv/yc.csv'
     sink_csv(final, yc_csv, header)
