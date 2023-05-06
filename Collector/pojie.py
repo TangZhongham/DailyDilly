@@ -1,4 +1,3 @@
-import mechanicalsoup
 import re
 from Collector.collector import *
 
