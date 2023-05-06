@@ -3,7 +3,7 @@ import mechanicalsoup
 
 
 def get_page(url):
-    browser = mechanicalsoup.StatefulBrowser()
+    browser = mechanicalsoup.StatefulBrowser(user_agent="Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:16.0.1) Gecko/20121011 Firefox/21.0.1")
     browser.open(url)
     p = browser.page
     return p
