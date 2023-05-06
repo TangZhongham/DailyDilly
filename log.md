@@ -54,12 +54,12 @@
 
 #### 🏄 娱乐
 
-❎ hupu
+🏄 hupu
 ❎ t66y：https://rsshub.app/t66y/7    
 ❎ v2ex：https://v2ex.com/index.xml
 ❎ pingcong
 ❎ 机核
-❎ chiphell
+🏄 chiphell
 🏄 吾爱破解
 ❎ 支持 github 登陆的推荐抓取
 ❎ twitter？不知道现在还行不行
@@ -130,3 +130,7 @@ Foundation：有 email 的template
 0505 了解了一个很好玩的项目，帮助了这个项目定位。感觉先不要横向铺太开，专注完成几个最小可行方案，一条路走通。
 
 先再爬几个网站，然后考虑权重计算，前端展示，rss 定义。---- 说白了自己想搞一个网站聚合版的 "今日头条/抖音"
+
+0506
+
+写了hupu 和 chiphell。明天上午再写俩个差不多就可以开始搞下一步了。
