@@ -18,6 +18,9 @@ pc_list = []
 
 
 def get_pc(pc):
+    # 貌似还不让我用 headless 模式妈的
+    # option = webdriver.ChromeOptions()
+    # option.add_argument('headless')  # 设置option
     chrome_service = ChromeService(executable_path='../storage/chromedriver')
     dr = webdriver.Chrome(service=chrome_service)
     dr.get(pc)
