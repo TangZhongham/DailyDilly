@@ -55,10 +55,10 @@
 #### 🏄 娱乐
 
 🏄 hupu
-❎ t66y：https://rsshub.app/t66y/7    
+🏄 t66y：自己爬了没用rsshub，https://rsshub.app/t66y/7    
 ❎ v2ex：https://v2ex.com/index.xml
 ❎ pingcong
-❎ 机核
+🏄 机核
 🏄 chiphell
 🏄 吾爱破解
 ❎ 支持 github 登陆的推荐抓取
