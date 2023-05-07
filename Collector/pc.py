@@ -18,7 +18,7 @@ pc_list = []
 
 
 def get_pc(pc):
-    chrome_service = ChromeService(executable_path='/Users/tangmoumou/python_projects/DailyDilly/storage/chromedriver')
+    chrome_service = ChromeService(executable_path='../storage/chromedriver')
     dr = webdriver.Chrome(service=chrome_service)
     dr.get(pc)
     html = dr.page_source
