@@ -23,11 +23,15 @@ def get_chiphell(cp):
         url = "" + each.find("a").get("href")
         description = each.find("dd", "xs2 cl").get_text()
         timestamp = each.find("span", "xg1").get_text().strip()
-        cp_dic["name"] = name
-        cp_dic["description"] = description
-        cp_dic["url"] = url
-        cp_dic["timestamp"] = timestamp
-        chiphell_list.append(cp_dic)
+
+        chiphell_list.append(
+            {
+                "name": name,
+                "description": description,
+                "url": "https://www.chiphell.com/" + url,
+                "timestamp": timestamp
+            }
+        )
 
 
 if __name__ == '__main__':
