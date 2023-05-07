@@ -24,29 +24,37 @@ def get_yc(yc):
     # 作者，points 数，时间。（可以获得当天内的top10帖子
     for x in p.find_all("td", "subtext"):
         score_dic = {}
+        score = ""
+        comments = ""
+
+        # '2023-05-03T10:32:10'
+        timestamp = x.find("span", "age").get("title")
+        # time from now
+        time = x.find("span", "age").get_text()
+        writer = x.find("a", "hnuser").get_text() if x.find("a", "hnuser") else ""
+
         # 存在没有score 的条目
         _score = x.find("span", "score").get_text() if x.find("span", "score") else ""
         if re.findall("[0-9]+", _score):
             score = re.findall("[0-9]+", _score)[0]
-            score_dic["score"] = score
         else:
             # threads like hiring does not have a score
-            score_dic["score"] = 0
-        # '2023-05-03T10:32:10'
-        timestamp = x.find("span", "age").get("title")
-        score_dic["timestamp"] = timestamp
-        # time from now
-        time = x.find("span", "age").get_text()
-        score_dic["time"] = time
-        writer = x.find("a", "hnuser").get_text() if x.find("a", "hnuser") else ""
-        score_dic["writer"] = writer
+            score = 0
+
         _comments = x.find_all("a")[-1].get_text()
         if re.findall("[0-9]+", _comments):
             comments = re.findall("[0-9]+", _comments)[0]
-            score_dic["comments"] = comments
         else:
-            score_dic["comments"] = 0
-        b.append(score_dic)
+            comments = 0
+        b.append(
+            {
+                "writer": writer,
+                "score": score,
+                "comments": comments,
+                "time": time,
+                "timestamp": timestamp
+            }
+        )
 
 
 def is_new(threads):

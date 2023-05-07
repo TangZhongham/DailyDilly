@@ -35,8 +35,15 @@ def get_info(threads):
             thread_writer = re.findall("作者：(.+?)<br>", thread_tips)[0]
             thread_timestamp = re.findall("时间：(.+?)<br>", thread_tips)[0]
             thread_type = re.findall("版块：(.+?)<br>", thread_tips)[0]
-            pojie.append({"name": thread_name, "type": thread_type, "writer": thread_writer,
-                          "url": "https://www.52pojie.cn/" + thread_url, "timestamp": thread_timestamp})
+            pojie.append(
+                {
+                    "name": thread_name,
+                    "type": thread_type,
+                    "writer": thread_writer,
+                    "url": "https://www.52pojie.cn/" + thread_url,
+                    "timestamp": thread_timestamp
+                }
+            )
             print({"name": thread_name, "type": thread_type, "writer": thread_writer,
                           "url": "https://www.52pojie.cn/" + thread_url, "timestamp": thread_timestamp})
 

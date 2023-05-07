@@ -4,6 +4,7 @@ from Collector.collector import *
 
 t66y_url = "https://t66y.com/thread0806.php?fid=7"
 base_url = "http://www.t66y.com/"
+t66y_list = []
 
 
 def get_t66y(url):
@@ -27,3 +28,14 @@ def get_t66y(url):
             reply_time = topic.find_all("td")[4].find("a").get_text().strip()
             author = topic.find_all("td")[2].find("a").get_text()
             timestamp = topic.find_all("td")[2].find("span", "s3").get("data-timestamp")
+            t66y_list.append(
+                {
+                    "name": name,
+                    "thumbsup": thumbsup,
+                    "comments": comments,
+                    "url": url,
+                    "author": author,
+                    "timestamp": timestamp,
+                    "reply_time": reply_time
+                }
+            )

@@ -26,15 +26,22 @@ def get_hupu_mainpage(hupu):
         url = base_url + each.find("a").get("href")
         _comments = each.find("span", "t-replies").get_text()
         comments = re.findall("^\d+", _comments)[0]
-        main_dic["title"] = title
-        main_dic["comments"] = comments
-        main_dic["url"] = url
-        main_dic["type"] = "all-nba"
-        hupu_list.append(main_dic)
+        # main_dic["title"] = title
+        # main_dic["comments"] = comments
+        # main_dic["url"] = url
+        # main_dic["type"] = "all-nba"
+        hupu_list.append(
+            {
+                "title": title,
+                "comments": comments,
+                "url": url,
+                "type": "all-nba"
+            }
+        )
 
 
 def get_hupu_bbs(topic):
-    topic_url  = base_url + "/" + topic
+    topic_url = base_url + "/" + topic
     p = get_page(topic_url)
     topics = p.find_all("li", "bbs-sl-web-post-body")
     for each in topics:
@@ -43,11 +50,20 @@ def get_hupu_bbs(topic):
         url = base_url + each.find("a").get("href")
         _comments = each.find("div", "post-datum").get_text()
         comments = re.findall("^\d+", _comments)[0]
-        main_dic["title"] = title
-        main_dic["comments"] = comments
-        main_dic["url"] = url
-        main_dic["type"] = topic
-        hupu_list.append(main_dic)
+        # main_dic["title"] = title
+        # main_dic["comments"] = comments
+        # main_dic["url"] = url
+        # main_dic["type"] = topic
+        # hupu_list.append(main_dic)
+        hupu_list.append(
+            {
+                "title": title,
+                "comments": comments,
+                "url": url,
+                "type": topic
+            }
+        )
+
 
 if __name__ == '__main__':
     get_hupu_mainpage(url)
