@@ -57,7 +57,7 @@
 🏄 hupu
 🏄 t66y：自己爬了没用rsshub，https://rsshub.app/t66y/7    
 ❎ v2ex：https://v2ex.com/index.xml
-❎ pingcong
+🏄 pingcong
 🏄 机核
 🏄 chiphell
 🏄 吾爱破解
@@ -74,6 +74,8 @@
 参考 https://github.com/echosoar/news 有很多新闻网站的api 可以直接爬取用 （搜github新闻聚合
 
 freebuf https://www.freebuf.com/feed
+
+可以通过爬聚合网站获取新闻（摘桃子行为）：https://tophub.today/ 金融网站也可以找点
 
 simhash 算法去重
 
