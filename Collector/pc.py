@@ -1,9 +1,6 @@
 import re
-from Collector.collector import *
-import mechanicalsoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
-
 from bs4 import BeautifulSoup
 
 # TODO 暂时只能使用 selenium 爬取。应该是需要开启js
@@ -12,10 +9,6 @@ pincong = "https://pincong.rocks"
 ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36	"
 header = {"Referer": "https://pincong.rocks/"}
 pc_list = []
-
-# b = mechanicalsoup.StatefulBrowser(user_agent=ua)
-# x = b.open(pincong, headers=header)
-
 
 def get_pc(pc):
     # 貌似还不让我用 headless 模式妈的
