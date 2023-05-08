@@ -24,7 +24,7 @@
 内容purify：raw 网页转csv格式，raw 网页转rss格式。先用csv格式？后期走通了再支持数据库
 （不知道nosql有没有类似sqlite 的服务，或者sqlite当nosqlyong）
 
-内容计算：权重计算，爬取内容比较。新闻细节用gpt总结。新闻权重对比（https://www.newsminimalist.com/ 这个思路很牛逼），
+内容计算：权重计算，爬取内容比较。新闻细节用gpt总结。新闻权重对比（https://www.newsminimalist.com/ 这个思路很牛逼），做一个对接多个免费chatgpt 的功能
 
 内容存储：csv/rss/sqlite/notion （考虑需不需要用sqlite，毕竟个网站需要
 
