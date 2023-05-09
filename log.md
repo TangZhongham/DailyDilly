@@ -136,3 +136,6 @@ Foundation：有 email 的template
 0506
 
 写了hupu 和 chiphell。明天上午再写俩个差不多就可以开始搞下一步了。
+
+0509
+没写
